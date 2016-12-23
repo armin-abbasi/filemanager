@@ -1,0 +1,23 @@
+{
+    "name": "xerobase/filemanager",
+    "description": "laravel 5 file manager package, comes with features such as renaming files or directories, creating new directories, uploading files(currently images and pdf files) or deleting them.",
+    "keywords": ["laravel","file manager","filemanager","xerobase","armin","abbasi"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Armin Abbasi",
+            "email": "armin.abbasi@hotmail.com",
+            "homepage": "http://xerobase.pro",
+            "role": "Web Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xerobase\\Filemanager\\": "src"
+        }
+    }
+}
