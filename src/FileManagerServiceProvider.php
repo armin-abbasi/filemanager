@@ -16,7 +16,7 @@ class FileManagerServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views','Filemanager');
         $this->publishes([
-            __DIR__.'/assets' => public_path('Xerobase/Filemanager'),
+            __DIR__.'/assets' => public_path('xerobase/filemanager'),
         ], 'public');
     }
 
