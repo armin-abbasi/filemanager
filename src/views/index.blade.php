@@ -432,9 +432,7 @@
                         type: 'post',
                         success: function(data){
                             response = $.parseJSON(data);
-                            console.log(typeof(data));
                             if(response.id) {
-                                console.log(response.name);
                                 if(response.extension == 'pdf'){
                                     var el = '';
                                     el = "<tr class='file-" + response.id + "' data-number='" + response.id + "'><td class='fileTitle'><i class='fa fa-file-pdf-o fa-lg'>&nbsp;<span class='namePrint openFile' data-real_name='" + response.real_name + "' id='namePrint-" + response.id + "'>" + response.name + "</span></i><div class='nameForm' id='nameForm-" + response.id + "' data-file_id='" + response.id + "'><input type='text' id='renameField-" + response.id + "' class='form-control' value='" + response.name + "'></div></td><td><div class='fileMenu fileMenu-" + response.id + "'><a class='downloadLink' data-real_name='" + response.real_name + "'><i class='fa fa-link'></i></a>&nbsp;<a><i class='fa fa-eye openFile' data-real_name='" + response.real_name + "' aria-hidden='true'></i></a><a class='renameButton' data-file_id='" + response.id + "'><i class='fa fa-edit'  aria-hidden='true'></i></a>&nbsp;<a class='removeFile' data-fileid='" + response.id + "'><i class='fa fa-trash' aria-hidden='true'></i></a></div></td><td class='dirTips'>size : " + response.size + " KB</td></tr>";

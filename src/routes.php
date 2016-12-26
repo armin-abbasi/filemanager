@@ -5,7 +5,7 @@
 Route::group(['prefix' => 'filemanager'],function(){
 
     //Display file manager page
-    Route::get('files','Xerobase\Filemanager\FileManagerController@index');
+    Route::get('/','Xerobase\Filemanager\FileManagerController@index');
 
     //Remove a file or directory
     Route::post('removefile','Xerobase\Filemanager\FileManagerController@removeFile');

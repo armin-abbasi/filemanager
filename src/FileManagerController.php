@@ -24,7 +24,7 @@ class FileManagerController extends Controller
         if($request->has('fileID')){
             $id = $request->input('fileID');
             $file = Filemanager::find($id);
-            $path = 'file_manager/';
+            $path = 'file_manager';
             if($file->path != '')
                 $path = $path.'/'.$file->path;
             $path = $path.'/'.$file->real_name;
@@ -132,7 +132,7 @@ class FileManagerController extends Controller
         $fileType = $request->file->getClientMimeType();
         if($fileType == 'application/pdf' || $fileType == 'image/png' || $fileType == 'image/jpeg') {
             $data['path'] = $request->input('path');
-            $pathToMove = 'file_manager/'. $data['path'];
+            $pathToMove = 'app/file_manager/'. $data['path'];
             $data['name'] = $request->file->getClientOriginalName();
             $checkName = $data['name'];
             $data['extension'] = strtolower($request->file->getClientOriginalExtension());
@@ -351,7 +351,7 @@ class FileManagerController extends Controller
                     }
 
                 } else {
-                    return 'ÎØÇ?? ÈæÌæÏ ÂãÏå , áØÝÂ ãÌÏÏ ÓÚ? ˜ä?Ï';
+                    return '????? ????? ???? , ???? ???? ??? ????';
                 }
             }
             // Update 'Move TO' directory sub files and folders count
@@ -368,7 +368,7 @@ class FileManagerController extends Controller
             $moveTO->sub_folders = $moveTO->sub_folders + $sub_folders;
             $moveTO->save();
         }else{
-            return 'áØÝÂ ÑæäÏå åÇ? ãæÑÏ äÙÑ ÑÇ Èå åãÑÇå ãÞÕÏ ÇäÊÞÇá ãÔÎÕ ˜ä?Ï';
+            return '???? ?????? ??? ???? ??? ?? ?? ????? ???? ?????? ???? ????';
         }
         return 'success';
     }
@@ -382,8 +382,9 @@ class FileManagerController extends Controller
         if(empty($file->path))
             $path = 'file_manager/'.$file->real_name;
         else
-            $path = 'file_manager/'.$file->path.'/'.$file->real_name;
+            $path = 'app/file_manager/'.$file->path.'/'.$file->real_name;
         $link = storage_path($path);
+        //return $link;
         $file->downloads += 1;
         $file->save();
         return response()->download($link);
