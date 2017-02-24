@@ -11,7 +11,7 @@
             "role": "Web Developer"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.6"
     },
