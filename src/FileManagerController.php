@@ -380,7 +380,7 @@ class FileManagerController extends Controller
     public function fileLink($real_name){
         $file = Filemanager::where('real_name',$real_name)->first();
         if(empty($file->path))
-            $path = 'file_manager/'.$file->real_name;
+            $path = 'app/file_manager/'.$file->real_name;
         else
             $path = 'app/file_manager/'.$file->path.'/'.$file->real_name;
         $link = storage_path($path);
